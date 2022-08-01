@@ -1,5 +1,9 @@
 import { arrayShuffle } from "./functions.js";
 
+window.addEventListener('resize',()=>{
+  location.reload();
+});
+
 let cards = [
   { number: 1, color: "#6f98a8" },
   { number: 2, color: "#2b8ead" },
@@ -12,19 +16,18 @@ let cards = [
   { number: 9, color: "#2f454e" },
 ];
 
-let borderWidth = "1.2rem";
+let borderWidth = "0.6rem";
 
 function renderCardTemplate(element) {
   let cssProp = (document.body.clientWidth > 959)? "background-color:"+element.color : "border-left: "+borderWidth+" solid "+element.color;
   document.getElementById("cards").innerHTML =
     document.getElementById("cards").innerHTML +
-    '<div class="col-4"><div class="card" style="'+cssProp+'">' +
+    '<div class="col-4" style="'+cssProp+'"><div class="card">' +
     element.number +
     "</div></div>";
 }
 
 function sortAllCards() {
-  console.log(cards);
   let sorted = cards.sort((a, b) => a.number > b.number ? 1 : -1);
   sorted.forEach((element, index) => {
     renderCardTemplate(element);
