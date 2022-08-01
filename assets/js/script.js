@@ -12,13 +12,13 @@ let cards = [
   { number: 9, color: "#2f454e" },
 ];
 
+let borderWidth = "1.2rem";
 
 function renderCardTemplate(element) {
+  let cssProp = (document.body.clientWidth > 959)? "background-color:"+element.color : "border-left: "+borderWidth+" solid "+element.color;
   document.getElementById("cards").innerHTML =
     document.getElementById("cards").innerHTML +
-    '<div class="col-4"><div class="card" style="background-color:' +
-    element.color +
-    '">' +
+    '<div class="col-4"><div class="card" style="'+cssProp+'">' +
     element.number +
     "</div></div>";
 }
