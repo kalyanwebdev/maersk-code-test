@@ -14,7 +14,9 @@
 
 [class^=col-]{
     padding-top: 10px;
-    padding-bottom: 10px
+    padding-bottom: 10px;
+    color: #fff;
+    font-size: 5rem;
 }
 
 @media (min-width: 992px) {
@@ -27,17 +29,16 @@
     width: 33.33333333%;
     float: left;
     height: 33vh;
-    background-color: gainsboro;
   }
 
-  .col-4 > .tile{
+  .col-4 > .card{
     display: flex;
     justify-content: center;
     height: inherit;
     align-items: center;
   }
 /* 
-  .col-4 .tile{
+  .col-4 .card{
     position: absolute;
     top: 0;
     bottom: 0;
